@@ -9,12 +9,13 @@ const ON = "ON"
 const BoardContainer = styled.div`
   border: 2px solid #795548;
   max-width: 300px;
+  min-width: 300px;
   margin: auto;
 `
 
 const GameMovesArea = styled.div`
   display: flex;
-  min-height: 500px;
+  min-height: 450px;
   padding: 10px;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -122,12 +123,13 @@ function getRandomInt(max) {
 const Board = () => {
   const [guesses, setGuesses] = useState([])
   const [activeGuess, setActiveGuess] = useState([])
-  const [secretCode, setSecretCode] = useState([
-    getRandomInt(6),
-    getRandomInt(6),
-    getRandomInt(6),
-    getRandomInt(6),
-  ])
+  // const [secretCode, setSecretCode] = useState([
+  //   getRandomInt(6),
+  //   getRandomInt(6),
+  //   getRandomInt(6),
+  //   getRandomInt(6),
+  // ])
+  const [secretCode, setSecretCode] = useState([1, 3, 0, 4])
   const [gameStatus, setGameStatus] = useState(ON)
 
   const handlePegChoose = (pegColor) => {
